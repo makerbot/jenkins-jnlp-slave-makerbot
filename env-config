@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export DISPLAY=:0
+nohup Xvfb :0 -pn -nolisten tcp -audit 4 -screen 0 800x600x16 &
+
+exec jenkins-slave $@
