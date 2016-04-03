@@ -11,7 +11,8 @@ RUN apt-get update && \
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
   echo deb http://apt.dockerproject.org/repo debian-jessie main > /etc/apt/sources.list.d/docker.list && \
   apt-get update && \
-  apt-get install -y docker && \
+  apt-get install -y docker-engine && \
+  usermod -a -G docker jenkins && \
   apt-get clean
 
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/2.56/remoting-2.56.jar \
