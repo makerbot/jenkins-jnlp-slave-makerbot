@@ -27,6 +27,10 @@
 # * JENKINS_TUNNEL : HOST:PORT for a tunnel to route TCP traffic to jenkins host, when jenkins can't be directly accessed over network
 # * JENKINS_URL : alternate jenkins URL
 
+if [[ "$(whoami)" == "root" ]]; then
+	docker daemon &
+fi
+
 export DISPLAY=:0
 nohup Xvfb :0 -pn -nolisten tcp -audit 4 -screen 0 800x600x16 &
 
