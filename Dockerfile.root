@@ -1,0 +1,2 @@
+FROM makerbot/jenkins-jnlp-slave:latest
+USER root
