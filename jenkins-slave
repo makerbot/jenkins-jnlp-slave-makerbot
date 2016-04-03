@@ -29,6 +29,7 @@
 
 if [[ "$(whoami)" == "root" ]]; then
 	docker daemon &
+        sleep 5
 fi
 
 export DISPLAY=:0
